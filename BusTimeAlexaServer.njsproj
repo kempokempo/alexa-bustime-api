@@ -14,6 +14,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>BusTimeAlexaServer</Name>
     <StartWebBrowser>False</StartWebBrowser>
+    <Environment>NODE_MTA_API_KEY=8e6b54cd-8ad9-43a4-af10-7c88bccb5bed</Environment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />

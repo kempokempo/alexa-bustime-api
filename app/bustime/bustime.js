@@ -8,7 +8,7 @@ module.exports = function () {
         
         var host = 'bustime.mta.info';
         var context = '/api/siri/stop-monitoring.json?';
-        var apiKey = '8e6b54cd-8ad9-43a4-af10-7c88bccb5bed';
+        var apiKey = process.env.NODE_MTA_API_KEY;
         // Per docs https://bustime.mta.info/wiki/Developers/SIRIStopMonitoring
         var apiVersion = 2;
         var opRef = 'MTA';

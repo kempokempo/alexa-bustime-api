@@ -33,8 +33,7 @@ router.route('/bustime')
     // use MTA NYCT_B35 for testing as it's regular
     getBusTime('302766', 'MTA NYCT_B35', function (bt) {
         res.json(bt);
-    });
-    
+    });   
 });
 
 router.get('/', function (req, res) {
