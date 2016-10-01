@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = 8080;
+var port = 8081;
 
 // get the model
 // var Bus = require('./app/models/bus.js');
@@ -28,12 +28,18 @@ router.use(function (req, res, next) {
 
 router.route('/bustime')
     .get(function (req, res) {
-    var result;
-    // MTABC_BM3 or MTABC_BM4 for realz
-    // use MTA NYCT_B35 for testing as it's regular
-    getBusTime('302766', 'MTA NYCT_B35', function (bt) {
-        res.json(bt);
-    });   
+        // MTABC_BM3 or MTABC_BM4 for realz
+        // use MTA NYCT_B35 for testing as it's regular
+        // user 302766 for church\7th
+        var busStop = req.query.busStop,
+            bus = req.query.bus;
+        if (bus == null || busStop == null) {
+            res.status(422).send('Please specify bus and busStop query params');
+        } else {
+            getBusTime(busStop, bus, function (bt) {
+                res.json(bt);
+            });
+        }   
 });
 
 router.get('/', function (req, res) {
