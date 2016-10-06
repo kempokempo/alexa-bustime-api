@@ -40,7 +40,15 @@ router.route('/bustime')
                 res.json(bt);
             });
         }   
-});
+    });
+//special function for my work buses
+router.route('/martinwork')
+    .get(function (req, res) {
+        getWorkBus(function (bt) {
+          res.json(bt);
+         });
+
+    });
 
 router.get('/', function (req, res) {
     res.json({ message: 'at the root of the api' });
