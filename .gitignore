@@ -4,6 +4,7 @@
 # Martin custom
 *.sln
 *.njsproj
+*.zip
 
 # User-specific files
 *.suo
